@@ -1,0 +1,31 @@
+#Lab 8
+import math
+from graphics import *
+def Bullseye():
+    win = GraphWin("Archery Target", 400, 300)
+    pt1 = win.getMouse()
+    print(pt1.getX(),pt1.getY())
+    center = Point(pt1.getX(),pt1.getY())
+    pt2 = win.getMouse()
+    print(pt2.getX(),pt2.getY())
+    radius = math.sqrt((pt2.getX() - pt1.getX())**2 + (pt2.getY() - pt1.getY())**2)
+    print(radius)
+    circle1 = Circle(center, radius)
+    circle1.setFill('white')
+    circle1.draw(win)
+    circle2 = Circle(center, (4/5) * radius)
+    circle2.setFill('black')
+    circle2.draw(win)
+    circle3 = Circle(center, (3/5) * radius)
+    circle3.setFill('blue')
+    circle3.draw(win)
+    circle4 = Circle(center, (2/5) * radius)
+    circle4.setFill('red')
+    circle4.draw(win)
+    circle5 = Circle(center, (1/5) * radius)
+    circle5.setFill('yellow')
+    circle5.draw(win)
+    win.getMouse()
+    win.close()
+    
+Bullseye()
